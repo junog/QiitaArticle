@@ -21,16 +21,13 @@ class QiitaClientTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_タイトルが表示されること() {
+        let vc = ArticleListViewController()
+        let window = UIWindow()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        
+        XCTAssertEqual(vc.titleLabel.text, "記事タイトル")
     }
     
 }
